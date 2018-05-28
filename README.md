@@ -32,7 +32,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/cloud_watch_scheduled_events_cron.
+Bug reports and pull requests are welcome on GitHub at https://github.com/abetomo/cloud_watch_scheduled_events_cron.
 
 ## License
 
