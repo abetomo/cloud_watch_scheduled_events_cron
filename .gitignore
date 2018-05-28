@@ -6,3 +6,9 @@
 /pkg/
 /spec/reports/
 /tmp/
+/Gemfile.lock
+
+## Environment normalization:
+/.bundle/
+/vendor/bundle
+/lib/bundler/man/
