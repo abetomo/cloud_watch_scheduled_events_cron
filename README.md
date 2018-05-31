@@ -1,9 +1,5 @@
 # CloudWatchScheduledEventsCron
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/cloud_watch_scheduled_events_cron`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
-
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -14,15 +10,26 @@ gem 'cloud_watch_scheduled_events_cron'
 
 And then execute:
 
-    $ bundle
+```
+$ bundle
+```
 
 Or install it yourself as:
 
-    $ gem install cloud_watch_scheduled_events_cron
+```
+$ gem install cloud_watch_scheduled_events_cron
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+Convert standard output.
+
+```
+% echo '0 10 * * *' | to_cwcec
+0 10 * * ? *
+% echo '5 * * * 1-5' | to_cwcec
+5 * ? * MON-FRI *
+```
 
 ## Development
 
