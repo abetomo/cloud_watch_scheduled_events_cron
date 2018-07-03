@@ -1,5 +1,7 @@
 # CloudWatchScheduledEventsCron
 
+Convert crontab expression to CloudWatch expression.
+
 ## Installation
 
 Add this line to your application's Gemfile:
