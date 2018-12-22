@@ -1,5 +1,7 @@
 # CloudWatchScheduledEventsCron
 
+[![Gem Version](https://badge.fury.io/rb/cloud_watch_scheduled_events_cron.svg)](https://badge.fury.io/rb/cloud_watch_scheduled_events_cron)
+
 Convert crontab expression to CloudWatch expression.
 
 ## Installation
