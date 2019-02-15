@@ -29,9 +29,9 @@ $ gem install cloud_watch_scheduled_events_cron
 Convert standard output.
 
 ```
-% echo '0 10 * * *' | to_cwcec
+$ echo '0 10 * * *' | to_cwcec
 0 10 * * ? *
-% echo '5 * * * 1-5' | to_cwcec
+$ echo '5 * * * 1-5' | to_cwcec
 5 * ? * MON-FRI *
 ```
 
