@@ -1,23 +1,35 @@
 name: Ruby CI
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   test:
-    name: Test on Ruby ${{ matrix.ruby-version }} and ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         ruby-version: [2.6.x, 2.5.x]
-        os: [ubuntu-latest, windows-latest, macos-latest]
+        os: [ubuntu-latest, windows-latest]
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@master
     - name: Set up Ruby ${{ matrix.ruby-version }}
-      uses: actions/setup-ruby@v1
+      uses: actions/setup-ruby@master
       with:
-        node-version: ${{ matrix.ruby-version }}
-    - name: Test with Rake
-      run: |
-        gem install bundler || gem install bundler --no-document --force
-        bundle install --jobs 4 --retry 3
-        bundle exec rake test
+        ruby-version: ${{ matrix.ruby-version }}
+    - run: gem install bundler
+    - run: bundle install --jobs 4 --retry 3
+    - run: bundle exec rake test
+
+  macos-test:
+    runs-on: macos-latest
+    strategy:
+      matrix:
+        ruby-version: [2.6.x, 2.5.x]
+    steps:
+    - uses: actions/checkout@master
+    - name: Set up Ruby ${{ matrix.ruby-version }}
+      uses: actions/setup-ruby@master
+      with:
+        ruby-version: ${{ matrix.ruby-version }}
+    - run: gem install bundler --no-document --force
+    - run: bundle install --jobs 4 --retry 3
+    - run: bundle exec rake test
