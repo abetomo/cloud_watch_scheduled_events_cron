@@ -7,7 +7,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        ruby-version: [4.0, 3.4, 3.3, 3.2]
+        ruby-version: [4.1, 4.0, 3.4, 3.3]
         os: [ubuntu-latest, windows-latest]
     steps:
     - uses: actions/checkout@v2
@@ -23,7 +23,7 @@ jobs:
     runs-on: macos-latest
     strategy:
       matrix:
-        ruby-version: [4.0, 3.4, 3.3, 3.2]
+        ruby-version: [4.1, 4.0, 3.4, 3.3]
     steps:
     - uses: actions/checkout@v2
     - name: Set up Ruby ${{ matrix.ruby-version }}
